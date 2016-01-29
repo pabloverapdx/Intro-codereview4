@@ -1,10 +1,53 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title></title>
+      <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+      <link href="css/styles.css" rel="stylesheet" type="text/css" media="all">
+      <script src="js/jquery-1.12.0.js"></script>
+      <script src="js/scripts.js"></script>
+      <title>Pizzeria</title>
   </head>
   <body>
+    <div class="container">
+    <div class="header">
+      <h1>Welcome to Pablo's Pizzeria!</h1>
+    </div>
+    <div class="container">
+    <h1>Let's make you a pizza</h1>
 
-  </body>
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Choose Quantity, size, toppings:</h2>
+        <form id="LetsMakePizza">
+          <div class="form-group">
+            <label for="pizzaQuantity">Quantity</label>
+            <select id="pizzaQuantity" class="form-control">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="pizzaSize">Pizza Size</label>
+            <select id="pizzaSize" class="form-control">
+              <option>Small</option>
+              <option>Medium</option>
+              <option>Large</option>
+              </select>
+          </div>
+          <div class="form-group">
+            <label for="pizzaTopping">Pizza Topping</label>
+            <select id="pizzaSize" class="form-control">
+              <option>Pepperoni</option>
+              <option>Hawaiian</option>
+              <option>Mushrooms</option>
+              </select>
+          </div>
+          <button type="submit" class="btn">Your price is:</button>
+        </form>
+      </div>
+    </div>
+        </div>
+      </div>
+</body>
 </html>
