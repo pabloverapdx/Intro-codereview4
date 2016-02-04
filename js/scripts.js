@@ -1,19 +1,10 @@
-function Pizza (pizzaQuantity, pizzaSize, pizzaTopping, pizzaPrice) {
-  this.pizzaQuantity = pizzaQuantity;
-  this.pizzaSize = pizzaSize;
-  this.pizzaTopping = pizzaTopping;
-  this.pizzaPrice = pizzaPrice
- }
-
-Pizza.prototype.price = function() {
-
+function Pizza(size, toppings, quantity) {
+  this.size = size;
+  this.toppings = toppings;
+  this.quantity = quantity;
 }
-$(document).ready(function() {
-  $("form#letsMakePizza").submit(function(event) {
-
-
-
-
-    event.preventDefault();
-  });
-});
+// $(document).ready(function() {
+//   $("form#letsMakePizza").submit(function(event) {
+// event.preventDefault();
+//   });
+// });
