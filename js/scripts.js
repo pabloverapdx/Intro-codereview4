@@ -11,9 +11,7 @@ Pizza.prototype.addTopping = function(topping) {
 Pizza.prototype.totalPrice = function() {
   var sizePrice = 0;
 
-  if (this.size === "X-Large") {
-      sizePrice += 20;
-  } else if (this.size === "Large") {
+  if (this.size === "Large") {
       sizePrice += 16;
   } else if (this.size === "Medium") {
       sizePrice += 12;
@@ -22,20 +20,31 @@ Pizza.prototype.totalPrice = function() {
   }
 
   for(var i=0; i<this.toppings.length; i++) {
-    if (this.toppings[i] === "Chicken" || this.toppings[i] === "Pepperoni" || this.toppings[i] === "Sausage" || this.toppings[i] === "Bacon" || this.toppings[i] === "Salami" || this.toppings[i] === "Ham") {
+    if (this.toppings[i] === "Hawaiian" || this.toppings[i] === "Pepperoni" || this.toppings[i] === "Mushrooms") {
         sizePrice += 2;
-    }  else if (this.toppings[i] === "Green Pepper" || this.toppings[i] === "Mushroom" || this.toppings[i] === "Onion" || this.toppings[i] === "Black Olive") {
-        sizePrice += 1;
-    }
   }
-
+}
 
   var totalPrice = sizePrice * this.quantity;
 
   return totalPrice;
   }
-// $(document).ready(function() {
-//   $("form#letsMakePizza").submit(function(event) {
-// event.preventDefault();
-//   });
-// });
+
+// Clears form //
+  var clearForm = function() {
+    $('input:checkbox').removeAttr('checked');
+    $('input:radio').removeAttr('checked');
+  };
+
+  var constructPage = function() {
+    var mySize = ["Small", "Medium", "Large"];
+    var myQuantity = [1, 2, 3];
+
+    mySize.forEach(function(size) {
+      $("select#pizza-size").append("<option value='" + size + "'><span class='chosen-size'>" + size + "</span></option>");
+    });
+
+    myQuantity.forEach(function(quantity) {
+      $("select#pizza-quantity").append("<option value='" + quantity + "'><span class='chosen-quantity'>" + quantity + "</span></option>");
+    });
+  }
