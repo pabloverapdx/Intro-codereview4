@@ -48,3 +48,33 @@ Pizza.prototype.totalPrice = function() {
       $("select#pizza-quantity").append("<option value='" + quantity + "'><span class='chosen-quantity'>" + quantity + "</span></option>");
     });
   }
+  $(document).ready(function() {
+
+    clearForm();
+    constructPage();
+
+    $("form#user-info").submit(function(event) {
+
+      var pizzaToppings = [];
+      $(this).find("input[name=toppings]:checked").each(function() {
+        pizzaToppings.push($(this).val());
+      });
+      var pizzaSize = $("#pizza-size option:selected").text();
+      var pizzaQuantity = parseInt($("#pizza-quantity option:selected").val());
+
+      var myPizza = new Pizza(pizzaSize, pizzaToppings, pizzaQuantity);
+      var myPrice = myPizza.totalPrice();
+
+      $(".sizeChoice").text(pizzaSize);
+      $(".toppingsChoice").text(pizzaToppings);
+      $(".quantityChoice").text(pizzaQuantity);
+      $(".total-price").text(myPrice);
+
+      $("select#pizza-size").val("");
+      $("select#pizza-toppings").val("");
+      $("select#pizza-quantity").val("");
+
+      $("#result").show();
+      event.preventDefault();
+  });
+});
