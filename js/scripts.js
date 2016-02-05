@@ -30,7 +30,7 @@ Pizza.prototype.totalPrice = function() {
   return totalPrice;
   }
 
-// Clears form //
+
   var clearForm = function() {
     $('input:checkbox').removeAttr('checked');
     $('input:radio').removeAttr('checked');
@@ -48,6 +48,8 @@ Pizza.prototype.totalPrice = function() {
       $("select#pizza-quantity").append("<option value='" + quantity + "'><span class='chosen-quantity'>" + quantity + "</span></option>");
     });
   }
+// User Interface //
+
   $(document).ready(function() {
 
     clearForm();
